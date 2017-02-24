@@ -1,8 +1,10 @@
-const exampleReducer = (state = {}, action) => {
-  switch (action.type) {
-    default:
-      return state
-  }
-}
+import {combineReducers} from 'redux';
+import storeRecipes from './storeRecipes';
+import storeFavs from './storeFavs';
 
-export default exampleReducer;
+const allReducers = combineReducers({
+  storeRecipes,
+  storeFavs,
+})
+
+export default allReducers;

@@ -9,8 +9,14 @@ export default class Header extends Component{
       <header>
         <h1>Recipe Shmecipe</h1>
         <Link to='/signin'>
-          <Button
-            title='Sign In'/>
+          Sign In
+          {/* <Button
+            title='Sign In'/> */}
+        </Link>
+        <Link to='/favorites'>
+          Cookbook
+          {/* <Button
+            title='Cookbook'/> */}
         </Link>
       </header>
     )

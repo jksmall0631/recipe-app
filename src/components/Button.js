@@ -3,7 +3,7 @@ import React from 'react';
 const Button = ({title, onClick}) => {
   return (
     <button
-      onClick={onClick}>
+      onClick={() => onClick()}>
       {title}
     </button>
   )
