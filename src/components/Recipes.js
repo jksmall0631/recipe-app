@@ -60,6 +60,7 @@ export default class Recipes extends Component{
   render(){
     return (
       <section>
+        {this.props.children}
         <input
           placeholder='Ingredient'
           onChange={(e) => {this.setState({ingredients: e.target.value})}}

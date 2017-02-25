@@ -7,17 +7,39 @@ export default class Header extends Component{
   render(){
     return (
       <header>
-        <h1>Recipe Shmecipe</h1>
-        <Link to='/signin'>
-          Sign In
-          {/* <Button
-            title='Sign In'/> */}
-        </Link>
-        <Link to='/favorites'>
-          Cookbook
-          {/* <Button
-            title='Cookbook'/> */}
-        </Link>
+        <div className='mainNav'>
+          <img className='logo' src={require('../styles/recipe-app-logo.png')} height='40px'></img>
+          {/* <h1>Recipe Shmecipe</h1> */}
+          <nav>
+            <Link to='/favorites'>
+            <Button
+              title='The Fridge'
+              className='nav-btn'/>
+            </Link>
+            <Link to='/favorites'>
+              <Button
+                title='The Cookbook'
+                className='nav-btn'/>
+            </Link>
+            <Link to='/signin'>
+              <Button
+                title='Sign In'
+                className='nav-btn'/>
+            </Link>
+          </nav>
+        </div>
+        <div className='subNav'>
+          <Link>
+            <Button
+              title='search by ingredients'
+              className='subNav-btn'/>
+            </Link>
+            <Link>
+              <Button
+                title='search by cuisine'
+                className='subNav-btn'/>
+              </Link>
+            </div>
       </header>
     )
   }

@@ -1,5 +1,41 @@
 body {
-  background: pink;
+  font-family: 'Comfortaa', cursive;
+}
+
+.mainNav {
+  background: #EB4123;
+}
+
+.logo {
+  margin: 15px;
+}
+
+nav {
+  float: right;
+  margin-top: 10px;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+.nav-btn {
+  font-size: 15px;
+  background: none;
+  border: none;
+  color: white;
+  padding: 20px;
+}
+
+.subNav {
+  background: #BDBDBD;
+  text-align: center;
+}
+
+.subNav-btn {
+  font-size: 12px;
+  background: none;
+  border: none;
+  color: #F3F3F3;
+  padding: 10px;
 }
 
 .img {
