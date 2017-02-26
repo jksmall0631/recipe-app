@@ -6,10 +6,12 @@ export default class Search extends Component{
     this.state = {
       ingredients: '',
     }
+    this.grabNewRecipes = this.grabNewRecipes.bind(this);
   }
 
   grabNewRecipes(){
-    const url = ('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=' + this.state.ingredients +'%2Cflour%2Csugar&limitLicense=false&number=1&ranking=1')
+    let formattedIngredients = this.state.ingredients.replace(', ', '%2C')
+    const url = ('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=' + formattedIngredients +'%2Cflour%2Csugar&limitLicense=false&number=1&ranking=1')
     console.log(url)
     fetch(url, {
       method: 'GET',
@@ -31,7 +33,7 @@ export default class Search extends Component{
           value={this.state.ingredients}>
         </input>
         <button
-          onClick={() => {this.grabNewRecipes}}>
+          onClick={() => {this.grabNewRecipes()}}>
           Submit
         </button>
       </div>

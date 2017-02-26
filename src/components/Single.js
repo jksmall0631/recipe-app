@@ -8,7 +8,7 @@ const Single = (props) => {
   })
   return (
     <div>
-      <img className='img' src={recipe.image}></img>
+      <img className='img' src={recipe.image} alt={recipe.title}></img>
       <h2>{recipe.title}</h2>
       <ul>{ingredients}</ul>
       <p>{recipe.instructions}</p>

@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from './Button';
 import {Link} from 'react-router';
 
 const Recipe = ({recipe, addFav, moveToSingle}) => {
@@ -7,7 +6,7 @@ const Recipe = ({recipe, addFav, moveToSingle}) => {
     <div>
       <Link
         to='/single'>
-        <img className='img' src={recipe.image} onClick={() => moveToSingle(recipe)}></img>
+        <img className='img' src={recipe.image} onClick={() => moveToSingle(recipe)} alt={recipe.title}></img>
       </Link>
       <h2>{recipe.title}</h2>
       {/* <Button title='fav' onClick={onClick(recipe)}/> */}

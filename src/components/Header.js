@@ -27,7 +27,7 @@ export default class Header extends Component{
     return (
       <header>
         <div className='mainNav'>
-          <img className='logo' src={require('../styles/recipe-app-logo.png')} height='40px'></img>
+          <img className='logo' src={require('../styles/recipe-app-logo.png')} height='40px' alt='chef hat logo'></img>
           <nav>
             <Link to='/favorites'>
             <Button
