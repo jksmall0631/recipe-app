@@ -1,13 +1,28 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Header from './Header';
 
-const App = (props) => {
-  return (
-    <section>
-      <Header />
-      {props.children}
-    </section>
-  )
-}
+export default class App extends Component{
 
-export default App;
+  // componentDidMount(){
+  //   const url = ('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=1')
+  //
+  //   fetch(url, {
+  //     method: 'GET',
+  //     headers: {
+  //       'X-Mashape-Key': 'mCZGFaxu4ymsh4MortfuaV65gXRgp1VS83DjsnWmsxDi103FFH',
+  //       'Accept': 'application/json'
+  //     },
+  //   })
+  //   .then(response => response.json())
+  //   .then(response => this.props.storeRecipes(response.recipes))
+  // }
+
+  render(){
+    return (
+      <section>
+        <Header />
+        {this.props.children}
+      </section>
+    )
+  }
+}

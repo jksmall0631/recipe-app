@@ -11,3 +11,10 @@ export const addFav = (recipe) => {
     recipe,
   }
 }
+
+export const moveToSingle = (recipe) => {
+  return {
+    type: 'SINGLE_FAV',
+    recipe,
+  }
+}

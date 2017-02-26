@@ -4,16 +4,13 @@ import Recipe from './Recipe';
 export default class Recipes extends Component{
   constructor(){
     super();
-    this.state = {
-      ingredients: '',
-    }
     this.addFav = this.addFav.bind(this);
+    this.moveToSingle = this.moveToSingle.bind(this);
   }
-  //DONT DELETE!!!!!!!!!!!!!!!!!!!!!!!!!
-  // componentDidMount(){
-  //   // this.getCurrentUser();
-  //   const url = ('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=10')
-  //
+
+  // grabNewRecipes(){
+  //   const url = ('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=' + this.state.ingredients +'%2Cflour%2Csugar&limitLicense=false&number=1&ranking=1')
+  //   console.log(url)
   //   fetch(url, {
   //     method: 'GET',
   //     headers: {
@@ -22,25 +19,15 @@ export default class Recipes extends Component{
   //     },
   //   })
   //   .then(response => response.json())
-  //   .then(response => this.props.storeRecipes(response.recipes))
+  //   .then(response => console.log(response))
   // }
 
-  grabNewRecipes(){
-    const url = ('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=' + this.state.ingredients +'%2Cflour%2Csugar&limitLicense=false&number=10&ranking=1')
-    console.log(url)
-    fetch(url, {
-      method: 'GET',
-      headers: {
-        'X-Mashape-Key': 'mCZGFaxu4ymsh4MortfuaV65gXRgp1VS83DjsnWmsxDi103FFH',
-        'Accept': 'application/json'
-      },
-    })
-    .then(response => response.json())
-    .then(response => console.log(response))
+  addFav(recipe){
+    this.props.addFav(recipe);
   }
 
-  addFav(recipe) {
-    this.props.addFav(recipe);
+  moveToSingle(recipe){
+    this.props.moveToSingle(recipe);
   }
 
   renderRecipes(){
@@ -49,7 +36,7 @@ export default class Recipes extends Component{
       recipes = this.props.recipes.map(recipe => {
         return (
           <li key={recipe.id}>
-            <Recipe recipe={recipe} addFav={this.addFav}/>
+            <Recipe recipe={recipe} addFav={this.addFav} moveToSingle={this.moveToSingle}/>
           </li>
         )
       })
@@ -57,11 +44,13 @@ export default class Recipes extends Component{
     return recipes;
   }
 
+
+
   render(){
     return (
       <section>
         {this.props.children}
-        <input
+        {/* <input
           placeholder='Ingredient'
           onChange={(e) => {this.setState({ingredients: e.target.value})}}
           value={this.state.ingredients}>
@@ -69,7 +58,7 @@ export default class Recipes extends Component{
         <button
           onClick={() => {this.grabNewRecipes()}}>
           Submit
-        </button>
+        </button> */}
         <ul>
           {this.renderRecipes()}
         </ul>

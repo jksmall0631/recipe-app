@@ -2,6 +2,10 @@ body {
   font-family: 'Comfortaa', cursive;
 }
 
+button {
+  font-family: 'Comfortaa', cursive;
+}
+
 .mainNav {
   background: #EB4123;
 }
@@ -23,6 +27,19 @@ nav {
   border: none;
   color: white;
   padding: 20px;
+}
+
+.searchBar {
+  position: relative;
+  top: -15px;
+  background: pink;
+  transition: all 1s;
+}
+
+.searchBar-active  {
+  top: 0px;
+  background: blue;
+  transition: translateY(50px);
 }
 
 .subNav {

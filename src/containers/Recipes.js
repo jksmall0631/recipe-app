@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { storeRecipes, addFav } from '../actions';
+import { addFav, moveToSingle } from '../actions';
 import Recipes from '../components/Recipes';
 
 const mapStateToProps = (state) => {
@@ -10,12 +10,15 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    storeRecipes: (recipes) => {
-      dispatch(storeRecipes(recipes))
-    },
+    // storeRecipes: (recipes) => {
+    //   dispatch(storeRecipes(recipes))
+    // },
     addFav: (recipe) => {
       dispatch(addFav(recipe))
     },
+    moveToSingle: (recipe) => {
+      dispatch(moveToSingle(recipe))
+    }
   }
 }
 
