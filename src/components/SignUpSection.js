@@ -15,8 +15,6 @@ export default class SignUpSection extends Component{
 
   handleSignUp(){
     signUp(this.state.email, this.state.password);
-    // signIn(this.state.email, this.state.password);
-
   }
 
   render(){

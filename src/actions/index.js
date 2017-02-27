@@ -18,3 +18,11 @@ export const moveToSingle = (recipe) => {
     recipe,
   }
 }
+
+export const setUser = (email, uid) => {
+  return {
+    type: 'SET_USER',
+    email,
+    uid,
+  }
+}

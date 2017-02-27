@@ -3,10 +3,12 @@ import Button from './Button';
 import Search from './Search';
 import CuisineSearch from './CuisineSearch';
 import {Link} from 'react-router';
+import {signOut} from '../firebase';
 
 export default class Header extends Component{
   constructor(){
     super();
+    console.log(this)
     this.state = {
       showSearch: false,
       showCuisine: false,
@@ -27,7 +29,9 @@ export default class Header extends Component{
     return (
       <header>
         <div className='mainNav'>
-          <img className='logo' src={require('../styles/recipe-app-logo.png')} height='40px' alt='chef hat logo'></img>
+          <Link to='/'>
+            <img className='logo' src={require('../styles/recipe-app-logo.png')} height='40px' alt='chef hat logo'></img>
+          </Link>
           <nav>
             <Link to='/favorites'>
             <Button
@@ -39,11 +43,18 @@ export default class Header extends Component{
                 title='The Cookbook'
                 className='nav-btn'/>
             </Link>
-            <Link to='/signin'>
+            {this.props.user.email ?
               <Button
-                title='Sign In'
-                className='nav-btn'/>
-            </Link>
+              title='Sign Out'
+              className='nav-btn'
+              onClick={signOut}/>
+            :
+              <Link to='/signin'>
+                <Button
+                  title='Sign In'
+                  className='nav-btn'/>
+              </Link>
+            }
           </nav>
         </div>
         {this.state.showSearch && <Search />}

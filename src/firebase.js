@@ -12,6 +12,7 @@ const config = {
 export default firebase.initializeApp(config);
 export let currentUser;
 const auth = firebase.auth();
+let database = firebase.database()
 // const transitionTo = Router.transitionTo;
 
 //Try to route if there is no error message
@@ -27,10 +28,12 @@ export const signUp = (email, password) => {
 };
 
 export const signIn = (email, password) => {
-  auth.signInWithEmailAndPassword(email, password).catch((error) => {
-    console.log('Sign In error', error);
-    alert(error.message);
-    return false;
+  auth.signInWithEmailAndPassword(email, password)
+    .then((success) => console.log('successful'))
+    .catch((error) => {
+      console.log('Sign In error', error);
+      alert(error.message);
+      return false;
   });
 };
 
@@ -40,4 +43,22 @@ export const signOut = () => {
   }, function(error) {
     console.error('Sign Out Error', error);
   });
+};
+
+export const sendFavs = (uid, favId, fav) => {
+  firebase.database().ref(`${uid}` + favId).set({
+    info: fav
+  });
+};
+
+export const getFavs = (uid, favId) => {
+  if(favId){
+    return firebase.database().ref(`${uid}/` + favId + `/info/`)
+  } else {
+    return firebase.database().ref(`${uid}/`)
+  }
+};
+
+export const removeFav = (uid, favId) => {
+  firebase.database().ref(`${uid}/` + favId).remove();
 };

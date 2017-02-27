@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {signIn} from '../firebase';
 import Button from './Button';
 import {Link} from 'react-router';
+import firebase from 'firebase';
 
 
 export default class SignInSection extends Component{
@@ -11,6 +12,22 @@ export default class SignInSection extends Component{
       email: '',
       password: '',
     }
+    this.login = this.login.bind(this);
+  }
+
+  login(){
+    signIn(this.state.email, this.state.password);
+    this.getUser();
+  }
+
+  getUser() {
+    firebase.auth().onAuthStateChanged((user) => {
+      this.props.setUser(user.email, user.uid)
+    }).bind(this);
+  }
+
+  grabFavs() {
+    
   }
 
   render(){
@@ -29,7 +46,8 @@ export default class SignInSection extends Component{
         <Link to='/'>
           <Button
             title='Submit'
-            onClick={() => signIn(this.state.email, this.state.password)}/>
+            className='login'
+            onClick={this.login}/>
         </Link>
       </section>
     )
