@@ -25,7 +25,7 @@ export default class Recipes extends Component{
       recipes = this.props.recipes.map(recipe => {
         return (
           <li key={recipe.id}>
-            <Recipe recipe={recipe} addFav={this.addFav} moveToSingle={this.moveToSingle}/>
+            <Recipe recipe={recipe} addDeleteFav={this.addFav} moveToSingle={this.moveToSingle}/>
           </li>
         )
       })

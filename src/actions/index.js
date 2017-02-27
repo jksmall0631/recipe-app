@@ -33,3 +33,17 @@ export const storeSearchRecipes = (recipes) => {
     recipes,
   }
 }
+
+export const getFavs = (recipes) => {
+  return {
+    type: 'GET_FAVS',
+    recipes,
+  }
+}
+
+export const deleteFav = (recipe) => {
+  return {
+    type: 'DELETE_FAV',
+    recipe,
+  }
+}

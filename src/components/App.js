@@ -19,7 +19,7 @@ export default class App extends Component{
     .then(response => {
       this.props.storeRecipes(response.recipes)
       getFavs(this.props.user).on('value', (info) => {
-        console.log(info.val())
+        this.props.getFavs(info.val())
       })
     })
   }

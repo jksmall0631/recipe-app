@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-const Recipe = ({recipe, addFav, moveToSingle}) => {
+const Recipe = ({recipe, addDeleteFav, moveToSingle}) => {
   return (
     <div>
       <Link
@@ -10,7 +10,7 @@ const Recipe = ({recipe, addFav, moveToSingle}) => {
       </Link>
       <h2>{recipe.title}</h2>
       {/* <Button title='fav' onClick={onClick(recipe)}/> */}
-      <button onClick={() => addFav(recipe)}></button>
+      <button onClick={() => addDeleteFav(recipe)}></button>
     </div>
   )
 }

@@ -56,5 +56,5 @@ export const getFavs = (uid, favId) => {
 };
 
 export const removeFav = (uid, favId) => {
-  firebase.database().ref(`${uid}/` + favId).remove();
+  firebase.database().ref(`${uid}/${favId}`).remove();
 };
