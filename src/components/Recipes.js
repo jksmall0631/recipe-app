@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
 import Recipe from './Recipe';
+import {sendFav} from '../firebase';
 
 export default class Recipes extends Component{
   constructor(){
     super();
+
     this.addFav = this.addFav.bind(this);
     this.moveToSingle = this.moveToSingle.bind(this);
   }
 
   addFav(recipe){
     this.props.addFav(recipe);
+    sendFav(this.props.user, recipe.id, recipe);
   }
 
   moveToSingle(recipe){

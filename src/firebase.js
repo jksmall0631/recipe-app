@@ -45,18 +45,14 @@ export const signOut = () => {
   });
 };
 
-export const sendFavs = (uid, favId, fav) => {
-  firebase.database().ref(`${uid}` + favId).set({
+export const sendFav = (uid, favId, fav) => {
+  const lol = firebase.database().ref(`${uid}/${favId}`).set({
     info: fav
   });
 };
 
 export const getFavs = (uid, favId) => {
-  if(favId){
-    return firebase.database().ref(`${uid}/` + favId + `/info/`)
-  } else {
     return firebase.database().ref(`${uid}/`)
-  }
 };
 
 export const removeFav = (uid, favId) => {

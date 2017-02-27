@@ -5,6 +5,7 @@ import Recipes from '../components/Recipes';
 const mapStateToProps = (state) => {
   return {
     recipes: state.storeRecipes.recipes,
+    user: state.setUser.uid
   }
 }
 

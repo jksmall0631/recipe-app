@@ -33,10 +33,3 @@ export const storeSearchRecipes = (recipes) => {
     recipes,
   }
 }
-
-// export const storeCuisineRecipes = (recipes) => {
-//   return {
-//     type: 'STORE_CUISINE_RECIPES',
-//     recipes,
-//   }
-// }

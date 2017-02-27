@@ -9,7 +9,7 @@ export default class CuisineSearch extends Component{
   }
 
   grabCuisine(title){
-    let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine=' + title + '&limitLicense=false&number=1&offset=0'
+    let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine=' + title + '&limitLicense=false&number=10&offset=0'
     fetch(url, {
         method: 'GET',
         headers: {
