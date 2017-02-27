@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Button from './Button';
+import {Link} from 'react-router';
 
 export default class CuisineSearch extends Component{
   constructor(){
@@ -17,18 +18,26 @@ export default class CuisineSearch extends Component{
         },
       })
       .then(response => response.json())
-      .then(response => console.log(response))
+      .then(response => {
+        let formatted = response.results.map(recipe => {
+          recipe.image = 'https://spoonacular.com/recipeImages/' + recipe.image;
+          return recipe;
+        })
+        this.props.storeSearchRecipes(formatted);
+      })
   }
 
   displayButtons(){
     let array = ['african', 'chinese', 'japanese', 'korean', 'vietnamese', 'thai', 'indian', 'british', 'irish', 'french', 'italian', 'mexican', 'spanish', 'middle eastern', 'jewish', 'american', 'cajun', 'southern', 'greek', 'german', 'nordic', 'eastern european', 'caribbean', 'latin american'];
     let buttonArray = array.map(cuisine => {
       return (
-        <Button
-          key={cuisine}
-          title={cuisine}
-          className='cuisine-btn'
-          onClick={this.grabCuisine}/>
+        <Link key={cuisine} to='/searched'>
+          <Button
+            key={cuisine}
+            title={cuisine}
+            className='cuisine-btn'
+            onClick={this.grabCuisine}/>
+        </Link>
       )
     })
     return buttonArray;
@@ -42,3 +51,5 @@ export default class CuisineSearch extends Component{
     )
   }
 }
+
+// https://spoonacular.com/recipeImages/

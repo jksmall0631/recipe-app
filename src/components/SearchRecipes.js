@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import Recipe from './Recipe';
 
-export default class Recipes extends Component{
+//This component was necessary in addition to the Recipes component because of
+//how the data comes back from the api with different calls.
+export default class SearchRecipes extends Component{
   constructor(){
     super();
     this.addFav = this.addFav.bind(this);
@@ -29,8 +31,6 @@ export default class Recipes extends Component{
     }
     return recipes;
   }
-
-
 
   render(){
     return (

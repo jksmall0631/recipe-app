@@ -10,6 +10,7 @@ import Recipes from './containers/Recipes';
 import Favs from './containers/Favs';
 import Scan from './components/Scan';
 import Single from './containers/Single';
+import SearchRecipes from './containers/SearchRecipes';
 
 import reset from './styles/reset.css';
 import style from './styles/style.css';
@@ -26,6 +27,7 @@ const router = (
         <Route path='/signin' component={Register} />
         <Route path='/scan' component={Scan} />
         <Route path='/single' component={Single} />
+        <Route path='/searched' component={SearchRecipes} />
       </Route>
     </Router>
   </Provider>

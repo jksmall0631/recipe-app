@@ -26,3 +26,17 @@ export const setUser = (email, uid) => {
     uid,
   }
 }
+
+export const storeSearchRecipes = (recipes) => {
+  return {
+    type: 'STORE_SEARCH_RECIPES',
+    recipes,
+  }
+}
+
+// export const storeCuisineRecipes = (recipes) => {
+//   return {
+//     type: 'STORE_CUISINE_RECIPES',
+//     recipes,
+//   }
+// }

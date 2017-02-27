@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Button from './Button';
-import Search from './Search';
-import CuisineSearch from './CuisineSearch';
+import Search from '../containers/Search';
+import CuisineSearch from '../containers/CuisineSearch';
 import {Link} from 'react-router';
 import {signOut} from '../firebase';
 

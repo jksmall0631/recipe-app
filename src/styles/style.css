@@ -29,6 +29,11 @@ nav {
   padding: 20px;
 }
 
+.nav-btn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .searchBar {
   position: relative;
   top: -15px;
@@ -53,6 +58,11 @@ nav {
   border: none;
   color: #F3F3F3;
   padding: 10px;
+}
+
+.subNav-btn:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .img {

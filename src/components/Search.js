@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router';
 
 export default class Search extends Component{
   constructor(){
@@ -21,7 +22,7 @@ export default class Search extends Component{
       },
     })
     .then(response => response.json())
-    .then(response => console.log(response))
+    .then(response => this.props.storeSearchRecipes(response))
   }
 
   render(){
@@ -32,10 +33,12 @@ export default class Search extends Component{
           onChange={(e) => {this.setState({ingredients: e.target.value})}}
           value={this.state.ingredients}>
         </input>
-        <button
-          onClick={() => {this.grabNewRecipes()}}>
-          Submit
-        </button>
+        <Link to='/searched'>
+          <button
+            onClick={() => {this.grabNewRecipes()}}>
+            Submit
+          </button>
+        </Link>
       </div>
     )
   }
