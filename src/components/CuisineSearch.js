@@ -8,8 +8,9 @@ export default class CuisineSearch extends Component{
     this.grabCuisine = this.grabCuisine.bind(this);
   }
 
+//This function makes the call to the api and formats the return so it may be rendered in the 'single' component
   grabCuisine(title){
-    let url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?cuisine=' + title + '&limitLicense=false&number=10&offset=0'
+    const url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=true&cuisine=' + title + '&instructionsRequired=true&limitLicense=false&number=10&offset=0&ranking=1'
     fetch(url, {
         method: 'GET',
         headers: {
@@ -19,11 +20,22 @@ export default class CuisineSearch extends Component{
       })
       .then(response => response.json())
       .then(response => {
-        let formatted = response.results.map(recipe => {
-          recipe.image = 'https://spoonacular.com/recipeImages/' + recipe.image;
-          return recipe;
-        })
-        this.props.storeSearchRecipes(formatted);
+        // response.results.forEach(recipe => {
+        //   let ingredients = [];
+        //   let steps = [];
+        //   recipe.analyzedInstructions[0].steps.forEach(step => {
+        //     steps.push(step.step);
+        //     step.ingredients.forEach(ingredient => {
+        //       // console.log(ingredient)
+        //       ingredients.push({originalString: ingredient.name, id: ingredient.id})
+        //     })
+        //   })
+        //   let formattedSteps = steps.join( )
+        //   recipe.instructions = formattedSteps;
+        //   recipe.extendedIngredients = ingredients
+        //   return recipe;
+        // })
+        this.props.storeSearchRecipes(response.results);
       })
   }
 
