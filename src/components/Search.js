@@ -12,8 +12,7 @@ export default class Search extends Component{
 
   grabNewRecipes(){
     let formattedIngredients = this.state.ingredients.replace(', ', '%2C')
-    const url =
-    // const url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=' + formattedIngredients +'%2Cflour%2Csugar&limitLicense=false&number=10&ranking=1'
+    const url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=true&instructionsRequired=true&includeIngredients=' + formattedIngredients + '&limitLicense=false&number=10&offset=0&ranking=1'
     console.log(url)
     fetch(url, {
       method: 'GET',
@@ -23,7 +22,7 @@ export default class Search extends Component{
       },
     })
     .then(response => response.json())
-    .then(response => this.props.storeSearchRecipes(response))
+    .then(response => this.props.storeSearchRecipes(response.results))
   }
 
   render(){
