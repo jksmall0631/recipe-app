@@ -1,5 +1,6 @@
 body {
   font-family: 'Comfortaa', cursive;
+  background: #F3F3F3;
 }
 
 button {
@@ -146,4 +147,30 @@ video {
 
 .cuisine-search button{
   margin: 5px;
+}
+
+.info {
+  margin-left: 350px;
+  padding: 10px;
+}
+
+.single img:hover {
+  opacity: 1;
+}
+
+.info h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.info ul {
+  margin-bottom: 20px;
+}
+
+.info p {
+  line-height: 20px;
+}
+
+.ingredient {
+  padding: 5px;
 }

@@ -13,10 +13,10 @@ export default class Fridge extends Component{
   displayGroceries(){
     return this.props.groceries.map(grocery => {
       return (
-        <li>
+        <div>
           <img src={grocery.grocery.images[2]}></img>
           <h4>{grocery.grocery.title}</h4>
-        </li>
+        </div>
       )
     })
   }
