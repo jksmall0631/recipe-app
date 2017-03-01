@@ -13,6 +13,7 @@ export default class SignInSection extends Component{
       password: '',
     }
     this.login = this.login.bind(this);
+    this.getUser = this.getUser.bind(this);
   }
 
   login(){
@@ -26,13 +27,10 @@ export default class SignInSection extends Component{
     }).bind(this);
   }
 
-  grabFavs() {
-    
-  }
-
   render(){
     return (
-      <section>
+      <section className='sign-in'>
+        <h1>Sign In</h1>
         <input
           placeholder='Email'
           onChange={(e) => {this.setState({email: e.target.value})}}

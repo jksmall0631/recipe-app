@@ -15,9 +15,10 @@ const storeFavs = (state = [], action) => {
         }
       })
       return status ? [...state, action] : state;
+      //check id against object name since its now the id
     case 'DELETE_FAV':
       return state.filter(recipe => {
-        if(recipe.id !== action.id){
+        if(recipe.id !== action.recipe.id){
           return recipe;
         }
       })

@@ -4,7 +4,7 @@ import SignUpSection from './SignUpSection';
 
 const Register = () => {
   return (
-    <section>
+    <section className='register'>
       <SignUpSection />
       <SignInSection />
     </section>

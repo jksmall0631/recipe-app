@@ -8,11 +8,17 @@ export default class Recipes extends Component{
     this.state = {
     }
     this.deleteFav = this.deleteFav.bind(this);
+    this.moveToSingle = this.moveToSingle.bind(this);
   }
 
   deleteFav(recipe){
     this.props.deleteFav(recipe);
     removeFav(this.props.user, recipe.id);
+  }
+
+  moveToSingle(recipe){
+    console.log(this.props)
+    this.props.moveToSingle(recipe);
   }
 
   renderFavs(){
@@ -21,7 +27,7 @@ export default class Recipes extends Component{
       favs = this.props.favs.map(recipe => {
         return (
           <li key={recipe.id}>
-            <Recipe recipe={recipe} addDeleteFav={this.deleteFav}/>
+            <Recipe recipe={recipe} moveToSingle={this.moveToSingle} addDeleteFav={this.deleteFav}/>
           </li>
         )
       })

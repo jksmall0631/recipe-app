@@ -19,7 +19,8 @@ export default class SignUpSection extends Component{
 
   render(){
     return (
-      <section>
+      <section className='sign-up'>
+        <h1>Sign Up</h1>
         <input
           placeholder='Name'
           onChange={(e) => {this.setState({name: e.target.value})}}

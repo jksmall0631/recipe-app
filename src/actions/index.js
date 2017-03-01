@@ -27,6 +27,14 @@ export const setUser = (email, uid) => {
   }
 }
 
+export const signOut = () => {
+  return {
+    type: 'SET_USER',
+    email: null,
+    uid: null,
+  }
+}
+
 export const storeSearchRecipes = (recipes) => {
   return {
     type: 'STORE_SEARCH_RECIPES',

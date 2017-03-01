@@ -1,5 +1,4 @@
 import firebase from 'firebase';
-// import {Router} from 'react-router';
 
 const config = {
   apiKey: "AIzaSyDOSs5dIcxjA9uGOiJMrrpVEFgNKPec754",
@@ -13,7 +12,6 @@ export default firebase.initializeApp(config);
 export let currentUser;
 const auth = firebase.auth();
 let database = firebase.database()
-// const transitionTo = Router.transitionTo;
 
 //Try to route if there is no error message
 export const signUp = (email, password) => {
@@ -46,7 +44,7 @@ export const signOut = () => {
 };
 
 export const sendFav = (uid, favId, fav) => {
-  const lol = firebase.database().ref(`${uid}/${favId}`).set({
+  const lol = firebase.database().ref(`${uid}/favorites/${favId}`).set({
     info: fav
   });
 };
@@ -58,13 +56,13 @@ export const sendGrocery = (uid, groceryId, grocery) => {
 };
 
 export const getFavs = (uid) => {
-    return firebase.database().ref(`${uid}/`)
+    return firebase.database().ref(`${uid}/favorites`)
 };
 
 export const getGroceries = (uid) => {
-    return firebase.database().ref(`${uid}/`)
+    return firebase.database().ref(`${uid}/groceries`)
 };
 
 export const removeFav = (uid, favId) => {
-  firebase.database().ref(`${uid}/${favId}`).remove();
+  firebase.database().ref(`${uid}/favorites/${favId}`).remove();
 };

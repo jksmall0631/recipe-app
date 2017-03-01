@@ -1,16 +1,16 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-const Recipe = ({recipe, addDeleteFav, moveToSingle}) => {
+const Recipe = ({recipe, addDeleteFav, moveToSingle, user}) => {
   return (
-    <div>
+    <div className='recipe'>
+      <h2 className='recipe-title'>{recipe.title}</h2>
       <Link
         to='/single'>
         <img className='img' src={recipe.image} onClick={() => moveToSingle(recipe)} alt={recipe.title}></img>
       </Link>
-      <h2>{recipe.title}</h2>
       {/* <Button title='fav' onClick={onClick(recipe)}/> */}
-      <button onClick={() => addDeleteFav(recipe)}></button>
+      {user ? <button onClick={() => addDeleteFav(recipe)}></button> : ''}
     </div>
   )
 }

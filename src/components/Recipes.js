@@ -24,8 +24,8 @@ export default class Recipes extends Component{
     if(this.props.recipes){
       recipes = this.props.recipes.map(recipe => {
         return (
-          <li key={recipe.id}>
-            <Recipe recipe={recipe} addDeleteFav={this.addFav} moveToSingle={this.moveToSingle}/>
+          <li key={recipe.id} className='recipe'>
+            <Recipe recipe={recipe} addDeleteFav={this.addFav} moveToSingle={this.moveToSingle} user={this.props.user}/>
           </li>
         )
       })
@@ -37,8 +37,8 @@ export default class Recipes extends Component{
 
   render(){
     return (
-      <section>
-        <ul>
+      <section className='recipe-cont'>
+        <ul className='recipes'>
           {this.renderRecipes()}
         </ul>
       </section>

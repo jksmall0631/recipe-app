@@ -20,7 +20,6 @@ export default class App extends Component{
       this.props.storeRecipes(response.recipes)
       getFavs(this.props.user).on('value', (info) => {
         this.props.getFavs(info.val())
-        console.log(info.val())
       })
     })
   }

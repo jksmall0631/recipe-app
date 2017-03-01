@@ -3,6 +3,8 @@ import Single from '../components/Single';
 
 const mapStateToProps = (state) => {
   return {
+    state: state,
+    test: state.moveToSingle,
     recipe: state.moveToSingle.recipe,
   }
 }

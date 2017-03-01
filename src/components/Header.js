@@ -4,17 +4,21 @@ import Search from '../containers/Search';
 import CuisineSearch from '../containers/CuisineSearch';
 import {Link} from 'react-router';
 import {signOut} from '../firebase';
+import {browserHistory} from 'react-router';
 
 export default class Header extends Component{
   constructor(){
     super();
-    console.log(this)
     this.state = {
       showSearch: false,
       showCuisine: false,
+      showError: false,
     }
     this.expandSearch = this.expandSearch.bind(this);
     this.expandCuisine = this.expandCuisine.bind(this);
+    this.goToCookbook = this.goToCookbook.bind(this);
+    this.goToFridge = this.goToFridge.bind(this);
+    this.signOut = this.signOut.bind(this);
   }
 
   expandSearch(){
@@ -25,6 +29,27 @@ export default class Header extends Component{
     this.setState({showCuisine: !this.state.showCuisine})
   }
 
+  goToCookbook(){
+    if(this.props.user.email){
+      browserHistory.push('/favorites');
+    }else{
+      this.setState({showError: !this.state.showError})
+    }
+  }
+
+  goToFridge(){
+    if(this.props.user.email){
+      browserHistory.push('/fridge');
+    }else{
+      this.setState({showError: !this.state.showError})
+    }
+  }
+
+  signOut(){
+    signOut();
+    this.props.signOut()
+  }
+
   render(){
     return (
       <header>
@@ -33,26 +58,34 @@ export default class Header extends Component{
             <img className='logo' src={require('../styles/recipe-app-logo.png')} height='40px' alt='chef hat logo'></img>
           </Link>
           <nav>
-            <Link to='/fridge'>
+            {/* <Link to='/fridge'> */}
             <Button
-              title='The Fridge'
-              className='nav-btn'/>
-            </Link>
-            <Link to='/favorites'>
+            title='The Fridge'
+            className='nav-btn'
+            onClick={this.goToFridge}/>
+            {/* <button className='nav-btn'>
+              The Fridge
+            </button>
+            </Link> */}
+            {/* <Link to='/favorites'> */}
               <Button
-                title='The Cookbook'
-                className='nav-btn'/>
-            </Link>
+              title='The Cookbook'
+              className='nav-btn'
+              onClick={this.goToCookbook}/>
+              {/* <button className='nav-btn'>
+                The Cookbook
+              </button> */}
+            {/* </Link> */}
             {this.props.user.email ?
               <Button
               title='Sign Out'
               className='nav-btn'
-              onClick={signOut}/>
+              onClick={this.signOut}/>
             :
               <Link to='/signin'>
-                <Button
-                  title='Sign In'
-                  className='nav-btn'/>
+                <button className='nav-btn'>
+                  Sign in
+                </button>
               </Link>
             }
           </nav>
@@ -65,14 +98,15 @@ export default class Header extends Component{
               title='search by ingredients'
               className='subNav-btn'
               onClick={this.expandSearch}/>
-            </Link>
-            <Link>
-              <Button
-                title='search by cuisine'
-                className='subNav-btn'
-                onClick={this.expandCuisine}/>
-              </Link>
-            </div>
+          </Link>
+          <Link>
+            <Button
+              title='search by cuisine'
+              className='subNav-btn'
+              onClick={this.expandCuisine}/>
+          </Link>
+          {/* {this.state.showError && !this.props.user.email && <p className='error'>Please Sign In</p>} */}
+        </div>
       </header>
     )
   }
