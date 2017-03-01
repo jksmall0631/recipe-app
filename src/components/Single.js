@@ -2,7 +2,7 @@ import React from 'react';
 // import {Link} from 'react-router';
 
 const Single = (props) => {
-  let recipe = props.recipe;
+  let recipe = props.recipe
   let ingredients = recipe.extendedIngredients.map(ingredient => {
     return (<li key={ingredient.id}>{ingredient.originalString}</li>)
   })

@@ -47,3 +47,10 @@ export const deleteFav = (recipe) => {
     recipe,
   }
 }
+
+export const sendGroceries = (grocery) => {
+  return {
+    type: 'STORE_GROCERY',
+    grocery,
+  }
+}

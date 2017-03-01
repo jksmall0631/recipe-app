@@ -51,7 +51,17 @@ export const sendFav = (uid, favId, fav) => {
   });
 };
 
-export const getFavs = (uid, favId) => {
+export const sendGrocery = (uid, groceryId, grocery) => {
+  const lol = firebase.database().ref(`${uid}/groceries/${groceryId}`).set({
+    info: grocery
+  });
+};
+
+export const getFavs = (uid) => {
+    return firebase.database().ref(`${uid}/`)
+};
+
+export const getGroceries = (uid) => {
     return firebase.database().ref(`${uid}/`)
 };
 

@@ -11,9 +11,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    // storeRecipes: (recipes) => {
-    //   dispatch(storeRecipes(recipes))
-    // },
     addFav: (recipe) => {
       dispatch(addFav(recipe))
     },

@@ -8,10 +8,10 @@ import App from './containers/App';
 import Register from './components/Register';
 import Recipes from './containers/Recipes';
 import Favs from './containers/Favs';
-import Scan from './components/Scan';
+import Scan from './containers/Scan';
 import Single from './containers/Single';
 import SearchRecipes from './containers/SearchRecipes';
-import Fridge from './components/Fridge'
+import Fridge from './containers/Fridge'
 
 import reset from './styles/reset.css';
 import style from './styles/style.css';
@@ -26,10 +26,10 @@ const router = (
         <IndexRoute component={Recipes} />
         <Route path='/favorites' component={Favs} />
         <Route path='/signin' component={Register} />
-        <Route path='/scan' component={Scan} />
         <Route path='/single' component={Single} />
         <Route path='/searched' component={SearchRecipes} />
         <Route path='/fridge' component={Fridge} />
+        <Route path='/scan' component={Scan} />
       </Route>
     </Router>
   </Provider>
