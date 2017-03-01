@@ -113,7 +113,7 @@ nav {
   margin-bottom: 20px;
 }
 
-.register button, .fridge button {
+.register button, .fridge button, .search button, .cuisine-search button {
   border-radius: 5px;
   border-style: solid;
 }
@@ -130,4 +130,20 @@ nav {
 
 .fridge * {
   margin-top: 10px;
+}
+
+video {
+  display: block;
+  margin: 50px auto;
+  width: 400px;
+  height:  300px;
+}
+
+.search input{
+  margin: 10px;
+
+}
+
+.cuisine-search button{
+  margin: 5px;
 }

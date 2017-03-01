@@ -6,7 +6,7 @@ export default class App extends Component{
 
   componentDidMount(){
 
-    const url = ('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=10')
+    const url = ('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=24')
 
     fetch(url, {
       method: 'GET',

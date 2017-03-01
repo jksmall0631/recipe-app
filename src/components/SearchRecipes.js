@@ -23,7 +23,7 @@ export default class SearchRecipes extends Component{
     if(this.props.recipes){
       recipes = this.props.recipes.map(recipe => {
         return (
-          <li key={recipe.id}>
+          <li key={recipe.id} className='recipe'>
             <Recipe recipe={recipe} addFav={this.addFav} moveToSingle={this.moveToSingle}/>
           </li>
         )
@@ -34,8 +34,8 @@ export default class SearchRecipes extends Component{
 
   render(){
     return (
-      <section>
-        <ul>
+      <section className='recipe-cont'>
+        <ul className='recipes'>
           {this.renderRecipes()}
         </ul>
       </section>
