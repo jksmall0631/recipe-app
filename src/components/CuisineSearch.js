@@ -8,9 +8,8 @@ export default class CuisineSearch extends Component{
     this.grabCuisine = this.grabCuisine.bind(this);
   }
 
-//This function makes the call to the api and formats the return so it may be rendered in the 'single' component
   grabCuisine(title){
-    const url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=true&cuisine=' + title + '&instructionsRequired=true&limitLicense=false&number=10&offset=0&ranking=1'
+    const url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=10&tags=' + title;
     fetch(url, {
         method: 'GET',
         headers: {
@@ -20,22 +19,7 @@ export default class CuisineSearch extends Component{
       })
       .then(response => response.json())
       .then(response => {
-        // response.results.forEach(recipe => {
-        //   let ingredients = [];
-        //   let steps = [];
-        //   recipe.analyzedInstructions[0].steps.forEach(step => {
-        //     steps.push(step.step);
-        //     step.ingredients.forEach(ingredient => {
-        //       // console.log(ingredient)
-        //       ingredients.push({originalString: ingredient.name, id: ingredient.id})
-        //     })
-        //   })
-        //   let formattedSteps = steps.join( )
-        //   recipe.instructions = formattedSteps;
-        //   recipe.extendedIngredients = ingredients
-        //   return recipe;
-        // })
-        this.props.storeSearchRecipes(response.results);
+        this.props.storeSearchRecipes(response.recipes);
       })
   }
 
