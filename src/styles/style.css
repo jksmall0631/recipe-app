@@ -1,0 +1,176 @@
+body {
+  font-family: 'Comfortaa', cursive;
+  background: #F3F3F3;
+}
+
+button {
+  font-family: 'Comfortaa', cursive;
+}
+
+.mainNav {
+  background: #EB4123;
+}
+
+.logo {
+  margin: 15px;
+}
+
+nav {
+  float: right;
+  margin-top: 10px;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+.nav-btn {
+  font-size: 15px;
+  background: none;
+  border: none;
+  color: white;
+  padding: 20px;
+}
+
+.nav-btn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.searchBar {
+  position: relative;
+  top: -15px;
+  background: pink;
+  transition: all 1s;
+}
+
+.searchBar-active  {
+  top: 0px;
+  background: blue;
+  transition: translateY(50px);
+}
+
+.subNav {
+  background: #BDBDBD;
+  text-align: center;
+}
+
+.subNav-btn {
+  font-size: 12px;
+  background: none;
+  border: none;
+  color: #F3F3F3;
+  padding: 10px;
+}
+
+.subNav-btn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.img {
+  width: 350px;
+  position: absolute;
+}
+
+.recipe {
+  position: relative;
+  width: 350px;
+  height: 240px;
+  display: inline-block;
+  overflow: hidden;
+  background: grey;
+  opacity: 0.8;
+}
+
+.img:hover {
+  opacity: 0.5;
+}
+
+.recipe-title {
+  position: absolute;
+  top: 200px;
+  color: #F3F3F3;
+  z-index: 100;
+}
+
+.error {
+  font-size: 10px;
+  color: red;
+}
+
+.sign-up {
+  border-right: 1px solid black;
+}
+
+.register {
+  width: 460px;
+  margin: auto;
+  display: flex;
+  align-items: top;
+}
+
+.register * {
+  padding: 5px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.register button, .fridge button, .search button, .cuisine-search button {
+  border-radius: 5px;
+  border-style: solid;
+}
+
+.sign-up, .sign-in{
+  display: inline-block;
+  margin-top: 50px;
+  padding: 50px;
+}
+
+.fridge {
+  text-align: center;
+}
+
+.fridge * {
+  margin-top: 10px;
+}
+
+video {
+  display: block;
+  margin: 50px auto;
+  width: 400px;
+  height:  300px;
+}
+
+.search input{
+  margin: 10px;
+
+}
+
+.cuisine-search button{
+  margin: 5px;
+}
+
+.info {
+  margin-left: 350px;
+  padding: 10px;
+}
+
+.single img:hover {
+  opacity: 1;
+}
+
+.info h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.info ul {
+  margin-bottom: 20px;
+}
+
+.info p {
+  line-height: 20px;
+}
+
+.ingredient {
+  padding: 5px;
+}
