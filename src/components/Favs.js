@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Recipe from './Recipe';
 import {removeFav} from '../firebase';
 
-export default class Recipes extends Component{
+export default class Favs extends Component{
   constructor(){
     super();
     this.state = {
@@ -17,7 +17,6 @@ export default class Recipes extends Component{
   }
 
   moveToSingle(recipe){
-    console.log(this.props)
     this.props.moveToSingle(recipe);
   }
 
@@ -26,8 +25,8 @@ export default class Recipes extends Component{
     if(this.props.favs){
       favs = this.props.favs.map(recipe => {
         return (
-          <li key={recipe.id}>
-            <Recipe recipe={recipe} moveToSingle={this.moveToSingle} addDeleteFav={this.deleteFav}/>
+          <li key={recipe.id} className='recipe'>
+            <Recipe key={recipe.id} recipe={recipe} addDeleteFav={this.deleteFav} moveToSingle={this.moveToSingle} user={this.props.user} symbol='-'/>
           </li>
         )
       })

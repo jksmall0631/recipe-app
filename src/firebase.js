@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+import {browserHistory} from 'react-router';
 
 const config = {
   apiKey: "AIzaSyDOSs5dIcxjA9uGOiJMrrpVEFgNKPec754",
@@ -13,14 +14,18 @@ export let currentUser;
 const auth = firebase.auth();
 let database = firebase.database()
 
-//Try to route if there is no error message
 export const signUp = (email, password) => {
-  firebase.auth().createUserWithEmailAndPassword(email, password).catch((error) => {
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+  .then(response => {
+    console.log('yay', response);
+    if(response.email){
+      signIn(email, password);
+      browserHistory.push('/');
+    }
+  })
+  .catch((error) => {
     console.log('Sign Up error', error);
     alert(error.message);
-    // if(!error.message){
-    //   Router.transitionTo('/');
-    // }
     return false;
   });
 };

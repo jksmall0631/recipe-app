@@ -25,17 +25,6 @@ export default class Fridge extends Component{
     return (
       <section className="fridge">
         <h1>What's in your fridge, yo?</h1>
-        {/* <input
-          placeholder='item'
-          onChange={(e) => this.setState({item: e.target.value})}
-          value={this.state.item}>
-        </input>
-        <input
-          placeholder='quantity'
-          onChange={(e) => this.setState({quantity: e.target.value})}
-          value={this.state.quantity}>
-        </input>
-        <button>Submit</button><br></br> */}
         <Link to='/scan'>
           <button>Scan</button>
         </Link>

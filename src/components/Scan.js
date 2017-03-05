@@ -53,7 +53,10 @@ export default class Scan extends Component{
 
   render(){
     return(
-      <div id='scanner'>
+      <div className='scan'>
+        <h1>UPC Scanner</h1>
+        <div id='scanner'>
+        </div>
       </div>
     )
   }

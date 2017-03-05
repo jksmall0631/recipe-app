@@ -1,6 +1,6 @@
 import React from 'react';
 import SignInSection from '../containers/SignInSection';
-import SignUpSection from './SignUpSection';
+import SignUpSection from '../containers/SignUpSection';
 
 const Register = () => {
   return (
