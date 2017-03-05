@@ -33,7 +33,7 @@ export default class Header extends Component{
     if(this.props.user.email){
       browserHistory.push('/favorites');
     }else{
-      this.setState({showError: !this.state.showError})
+      this.setState({showError: true})
     }
   }
 
@@ -48,6 +48,7 @@ export default class Header extends Component{
   signOut(){
     signOut();
     this.props.signOut()
+    this.setState({showError: false})
   }
 
   render(){
@@ -62,10 +63,10 @@ export default class Header extends Component{
             title='The Fridge'
             className='nav-btn'
             onClick={this.goToFridge}/>
-              <Button
-              title='The Cookbook'
-              className='nav-btn'
-              onClick={this.goToCookbook}/>
+            <Button
+            title='The Cookbook'
+            className='nav-btn'
+            onClick={this.goToCookbook}/>
             {this.props.user.email ?
               <Button
               title='Sign Out'
@@ -95,7 +96,7 @@ export default class Header extends Component{
               className='subNav-btn'
               onClick={this.expandCuisine}/>
           </Link>
-          {/* {this.state.showError && !this.props.user.email && <p className='error'>Please Sign In</p>} */}
+          {this.state.showError && !this.props.user.email && <p className='error'>Please Sign In</p>}
         </div>
       </header>
     )

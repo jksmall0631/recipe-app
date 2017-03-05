@@ -26,7 +26,7 @@ export default class Favs extends Component{
       favs = this.props.favs.map(recipe => {
         return (
           <li key={recipe.id} className='recipe'>
-            <Recipe key={recipe.id} recipe={recipe} addDeleteFav={this.deleteFav} moveToSingle={this.moveToSingle} user={this.props.user}/>
+            <Recipe key={recipe.id} recipe={recipe} addDeleteFav={this.deleteFav} moveToSingle={this.moveToSingle} user={this.props.user} symbol='-'/>
           </li>
         )
       })
