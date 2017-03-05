@@ -7,6 +7,10 @@ button {
   font-family: 'Comfortaa', cursive;
 }
 
+button:focus {
+  outline: none;
+}
+
 a {
   text-decoration: none;
 }
@@ -152,6 +156,14 @@ nav {
 .register button, .fridge button, .search button, .cuisine-search button {
   border-radius: 5px;
   border-style: solid;
+}
+
+.register button:hover, .fridge button:hover, .search button:hover, .cuisine-search button:hover {
+  background: #EB4123;
+}
+
+.cuisine-search button:focus {
+  background: #EB4123;
 }
 
 .sign-up, .sign-in{
