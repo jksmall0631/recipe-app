@@ -2,6 +2,12 @@ import { connect } from 'react-redux';
 import { storeRecipes, getFavs } from '../actions';
 import App from '../components/App';
 
+const mapStateToProps = (state) => {
+  return {
+    user: state.setUser.uid
+  }
+}
+
 const mapDispatchToProps = (dispatch) => {
   return {
     storeRecipes: (recipes) => {
@@ -13,4 +19,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)

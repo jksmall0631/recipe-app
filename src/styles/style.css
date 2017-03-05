@@ -92,6 +92,13 @@ nav {
   z-index: 100;
 }
 
+.add-delete {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
 .error {
   font-size: 10px;
   color: red;

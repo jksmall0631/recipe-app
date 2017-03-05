@@ -24,12 +24,13 @@ const router = (
     <Router history={browserHistory}>
       <Route path='/' component={App}>
         <IndexRoute component={Recipes} />
-        <Route path='/favorites' component={Favs} />
-        <Route path='/signin' component={Register} />
-        <Route path='/single' component={Single} />
-        <Route path='/searched' component={SearchRecipes} />
-        <Route path='/fridge' component={Fridge} />
-        <Route path='/scan' component={Scan} />
+        <Route path='recipes' component={Recipes} />
+        <Route path='favorites' component={Favs} />
+        <Route path='signin' component={Register} />
+        <Route path='single' component={Single} />
+        <Route path='searched' component={SearchRecipes} />
+        <Route path='fridge' component={Fridge} />
+        <Route path='scan' component={Scan} />
       </Route>
     </Router>
   </Provider>

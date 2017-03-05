@@ -5,7 +5,6 @@ import {getFavs} from '../firebase';
 export default class App extends Component{
 
   componentDidMount(){
-
     const url = ('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=24')
 
     fetch(url, {
@@ -17,11 +16,20 @@ export default class App extends Component{
     })
     .then(response => response.json())
     .then(response => {
-      console.log(response);
       this.props.storeRecipes(response.recipes)
-      getFavs(this.props.user).on('value', (info) => {
+      // getFavs(this.props.user).on('value', (info) => {
+      //   if(info.val()){
+      //     this.props.getFavs(info.val())
+      //   }
+      // })
+    })
+  }
+
+  componentWillUpdate(){
+    getFavs(this.props.user).on('value', (info) => {
+      if(info.val()){
         this.props.getFavs(info.val())
-      })
+      }
     })
   }
 
