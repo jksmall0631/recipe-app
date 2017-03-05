@@ -17,20 +17,17 @@ export default class App extends Component{
     .then(response => response.json())
     .then(response => {
       this.props.storeRecipes(response.recipes)
-      // getFavs(this.props.user).on('value', (info) => {
-      //   if(info.val()){
-      //     this.props.getFavs(info.val())
-      //   }
-      // })
     })
   }
 
   componentWillUpdate(){
-    getFavs(this.props.user).on('value', (info) => {
-      if(info.val()){
-        this.props.getFavs(info.val())
-      }
-    })
+    if(this.props.user){
+      getFavs(this.props.user).on('value', (info) => {
+        if(info.val()){
+          this.props.getFavs(info.val())
+        }
+      })
+    }
   }
 
   render(){

@@ -36,8 +36,8 @@ export default class Favs extends Component{
 
   render(){
     return (
-      <section>
-        <ul>
+      <section className='recipe-cont'>
+        <ul className='recipes'>
           {this.renderFavs()}
         </ul>
       </section>

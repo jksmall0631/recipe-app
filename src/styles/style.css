@@ -7,6 +7,10 @@ button {
   font-family: 'Comfortaa', cursive;
 }
 
+a {
+  text-decoration: none;
+}
+
 .mainNav {
   background: #EB4123;
 }
@@ -73,7 +77,15 @@ nav {
 
 .img {
   width: 350px;
-  position: absolute;
+  /*position: absolute;*/
+}
+
+.recipe-cont {
+  text-align: center;
+}
+
+.recipes {
+  display: block;
 }
 
 .recipe {
