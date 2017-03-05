@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {signUp} from '../firebase';
 import Button from './Button';
-// import {Link} from 'react-router';
+import firebase from 'firebase';
 
 export default class SignUpSection extends Component{
   constructor(){
@@ -15,6 +15,13 @@ export default class SignUpSection extends Component{
 
   handleSignUp(){
     signUp(this.state.email, this.state.password);
+    this.getUser();
+  }
+
+  getUser() {
+    firebase.auth().onAuthStateChanged((user) => {
+      this.props.setUser(user.email, user.uid)
+    }).bind(this);
   }
 
   render(){

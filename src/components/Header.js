@@ -58,24 +58,14 @@ export default class Header extends Component{
             <img className='logo' src={require('../styles/recipe-app-logo.png')} height='40px' alt='chef hat logo'></img>
           </Link>
           <nav>
-            {/* <Link to='/fridge'> */}
             <Button
             title='The Fridge'
             className='nav-btn'
             onClick={this.goToFridge}/>
-            {/* <button className='nav-btn'>
-              The Fridge
-            </button>
-            </Link> */}
-            {/* <Link to='/favorites'> */}
               <Button
               title='The Cookbook'
               className='nav-btn'
               onClick={this.goToCookbook}/>
-              {/* <button className='nav-btn'>
-                The Cookbook
-              </button> */}
-            {/* </Link> */}
             {this.props.user.email ?
               <Button
               title='Sign Out'

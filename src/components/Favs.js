@@ -17,7 +17,6 @@ export default class Recipes extends Component{
   }
 
   moveToSingle(recipe){
-    console.log(this.props)
     this.props.moveToSingle(recipe);
   }
 
