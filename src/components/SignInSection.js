@@ -23,7 +23,9 @@ export default class SignInSection extends Component{
 
   getUser() {
     firebase.auth().onAuthStateChanged((user) => {
-      this.props.setUser(user.email, user.uid)
+      if(user){
+        this.props.setUser(user.email, user.uid)
+      }
     }).bind(this);
   }
 

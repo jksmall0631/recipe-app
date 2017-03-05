@@ -35,6 +35,13 @@ export const signOut = () => {
   }
 }
 
+export const userLogout = () => {
+  return {
+    type: 'GET_FAVS',
+    recipes: null,
+  }
+}
+
 export const storeSearchRecipes = (recipes) => {
   return {
     type: 'STORE_SEARCH_RECIPES',

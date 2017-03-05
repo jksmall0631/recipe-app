@@ -48,6 +48,7 @@ export default class Header extends Component{
   signOut(){
     signOut();
     this.props.signOut()
+    this.props.userLogout()
     this.setState({showError: false})
   }
 
@@ -68,10 +69,12 @@ export default class Header extends Component{
             className='nav-btn'
             onClick={this.goToCookbook}/>
             {this.props.user.email ?
+              <Link to='/'>
               <Button
               title='Sign Out'
               className='nav-btn'
               onClick={this.signOut}/>
+              </Link>
             :
               <Link to='/signin'>
                 <button className='nav-btn'>
