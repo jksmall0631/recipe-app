@@ -35,6 +35,7 @@ export default class Favs extends Component{
   }
 
   render(){
+    debugger;
     return (
       <section className='recipe-cont'>
         <ul className='recipes'>
