@@ -15,6 +15,7 @@ import Fridge from './containers/Fridge'
 
 import reset from './styles/reset.css';
 import style from './styles/style.css';
+import media from './styles/media-queries.css';
 
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 const store = createStore(rootReducer, devTools);
